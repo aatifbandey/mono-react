@@ -1,6 +1,6 @@
 {
   "name": "@aatif-packages/tools",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "config for webpack",
   "author": "aatifbandey <aatifbandey2009@gmail.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
@@ -8,20 +8,15 @@
   "engines": {
     "node": ">= 8"
   },
-  
   "files": [
-   
     "babel.options.js",
-   
     "index.js",
-  
     "utils.js",
     "webpack.client.config.js",
-    
     "webpackPlugins.js"
   ],
-  
   "dependencies": {
+    "@aatif-packages/config": "^2.0.2",
     "@babel/cli": "7.12.1",
     "@babel/core": "7.12.1",
     "@babel/node": "7.12.1",
@@ -47,7 +42,6 @@
     "@babel/register": "7.12.1",
     "@babel/runtime": "7.12.1",
     "@loadable/babel-plugin": "5.12.0",
-    "@aatif-packages/config": "^2.0.1",
     "@testing-library/react": "8.0.1",
     "app-root-dir": "1.0.2",
     "assets-webpack-plugin": "3.9.10",
