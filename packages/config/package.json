@@ -1,17 +1,18 @@
 {
-  "name": "@mono-react/avatar",
-  "version": "2.0.0-alpha.1",
+  "name": "@packages/config",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "bandeyaatif <aatif.bandey@tokopedia.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
   "license": "ISC",
-  "main": "lib/avatar.js",
+  "private": false,
+  "main": "lib/config.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "index.js"
   ],
   "publishConfig": {
     "access": "public"
@@ -20,9 +21,12 @@
     "type": "git",
     "url": "git+https://github.com/aatifbandey/mono-react.git"
   },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+  "devDependencies": {
+    "app-root-dir": "1.0.2",
+    "dotenv-safe": "6.1.0",
+    "lodash": "^4.17.20"
   },
+  
   "bugs": {
     "url": "https://github.com/aatifbandey/mono-react/issues"
   }

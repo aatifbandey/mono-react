@@ -1,7 +1,36 @@
 {
   "name": "root",
   "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "services/*"
+    ],
+    "nohoist": [
+      "**/react-cookie",
+      "**/react-router",
+      "**/react-router-dom",
+      "**/react-router-config",
+      "**/react-redux"
+    ]
+  },
+  "scripts": {
+    "compile": "lerna run compile",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
+    "check-packages": "npm run clean && npm run compile && npm run test && npm run lint"
+    
+  },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
   }
 }

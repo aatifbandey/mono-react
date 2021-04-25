@@ -1,0 +1,27 @@
+{
+  "name": "@mono-react/avatar",
+  "version": "2.0.0-alpha.1",
+  "description": "> TODO: description",
+  "author": "bandeyaatif <aatif.bandey@tokopedia.com>",
+  "homepage": "https://github.com/aatifbandey/mono-react#readme",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aatifbandey/mono-react.git"
+  },
+  "dependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  }
+}
