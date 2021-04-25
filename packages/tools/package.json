@@ -8,24 +8,19 @@
   "engines": {
     "node": ">= 8"
   },
-  "bin": {
-    "lite-tools": "./lite-tools.js"
-  },
+  
   "files": [
-    "lite-tools.js",
+   
     "babel.options.js",
-    "import.resolver.js",
+   
     "index.js",
-    "templates",
+  
     "utils.js",
     "webpack.client.config.js",
-    "webpack.server.config.js",
+    
     "webpackPlugins.js"
   ],
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
+  
   "dependencies": {
     "@babel/cli": "7.12.1",
     "@babel/core": "7.12.1",
@@ -52,7 +47,7 @@
     "@babel/register": "7.12.1",
     "@babel/runtime": "7.12.1",
     "@loadable/babel-plugin": "5.12.0",
-    "@mono-react/config": "^1.0.0",
+    "@aatif-packages/config": "^2.0.1",
     "@testing-library/react": "8.0.1",
     "app-root-dir": "1.0.2",
     "assets-webpack-plugin": "3.9.10",
