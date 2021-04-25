@@ -1,11 +1,10 @@
 {
   "name": "@packages/tools",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "config for webpack",
   "author": "bandeyaatif <aatif.bandey@tokopedia.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
   "license": "ISC",
- 
   "engines": {
     "node": ">= 8"
   },
@@ -52,9 +51,8 @@
     "@babel/preset-typescript": "7.12.1",
     "@babel/register": "7.12.1",
     "@babel/runtime": "7.12.1",
-    "@mono-react/config": "^1.0.0",
-   
     "@loadable/babel-plugin": "5.12.0",
+    "@mono-react/config": "^1.0.0",
     "@testing-library/react": "8.0.1",
     "app-root-dir": "1.0.2",
     "assets-webpack-plugin": "3.9.10",
