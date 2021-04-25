@@ -2,7 +2,7 @@
   "name": "@mono-react/avatar",
   "version": "2.0.0",
   "description": "> TODO: description",
-  "author": "bandeyaatif <aatif.bandey@tokopedia.com>",
+  "author": "aatifbandey <aatifbandey2009@gmail.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
   "license": "ISC",
   "main": "src/index.js",
@@ -23,5 +23,6 @@
   "dependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
-  }
+  },
+  "gitHead": "87160a8b2f709b7b389b341da9784c3cd67f2464"
 }

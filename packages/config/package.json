@@ -2,10 +2,10 @@
   "name": "@packages/config",
   "version": "1.0.1-2.0.0.0",
   "description": "> TODO: description",
-  "author": "bandeyaatif <aatif.bandey@tokopedia.com>",
+  "author": "aatifbandey <aatifbandey2009@gmail.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
   "license": "ISC",
-  "private": false,
+  
   "main": "lib/config.js",
   "directories": {
     "lib": "lib",
@@ -28,5 +28,6 @@
   },
   "bugs": {
     "url": "https://github.com/aatifbandey/mono-react/issues"
-  }
+  },
+  "gitHead": "87160a8b2f709b7b389b341da9784c3cd67f2464"
 }
