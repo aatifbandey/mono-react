@@ -1,5 +1,5 @@
 {
-  "name": "@packages/tools",
+  "name": "@aatif-packages/tools",
   "version": "2.1.0",
   "description": "config for webpack",
   "author": "aatifbandey <aatifbandey2009@gmail.com>",
@@ -149,5 +149,5 @@
   "bugs": {
     "url": "https://github.com/aatifbandey/mono-react/issues"
   },
-  "gitHead": "87160a8b2f709b7b389b341da9784c3cd67f2464"
+  "gitHead": "48730a637ab60b4cc2a13c67ad896c8cb6c7598c"
 }
