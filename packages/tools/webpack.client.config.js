@@ -1,4 +1,4 @@
-require("@babel/register");
+require('@babel/register');
 import appRootDir from 'app-root-dir';
 import debug from 'debug';
 import fs from 'fs-extra';
