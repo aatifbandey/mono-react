@@ -26,7 +26,7 @@ const babelClientEnvironment = {
       [require.resolve('@babel/plugin-transform-destructuring'), { useBuiltIns: true }],
       [require.resolve('@babel/plugin-transform-runtime'), { helpers: false, regenerator: true }],
       require.resolve('babel-plugin-lodash'),
-      require.resolve('babel-plugin-graphql-tag'),
+     
       [require.resolve('babel-plugin-emotion'), { autoLabel: isDev, hoist: isProd, sourceMap: isDev }],
       ifDev(require.resolve('react-hot-loader/babel')),
       ifDev(require.resolve('babel-plugin-console')),

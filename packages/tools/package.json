@@ -18,7 +18,6 @@
   "dependencies": {
     "@aatif-packages/config": "^2.0.2",
     "@babel/cli": "7.12.1",
-    "@babel/core": "7.12.1",
     "@babel/node": "7.12.1",
     "@babel/plugin-proposal-class-properties": "7.12.1",
     "@babel/plugin-proposal-decorators": "7.12.1",
@@ -138,5 +137,8 @@
   "bugs": {
     "url": "https://github.com/aatifbandey/mono-react/issues"
   },
-  "gitHead": "48730a637ab60b4cc2a13c67ad896c8cb6c7598c"
+  "gitHead": "48730a637ab60b4cc2a13c67ad896c8cb6c7598c",
+  "devDependencies": {
+    "@babel/core": "^7.13.16"
+  }
 }

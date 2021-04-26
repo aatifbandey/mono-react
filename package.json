@@ -15,19 +15,21 @@
     ]
   },
   "scripts": {
+    "avatar:dev:client": "webpack-serve --config ./services/avatar/client/webpack-serve.config.js",
     "compile": "lerna run compile",
     "clean": "lerna run clean",
     "lint": "lerna run lint",
     "test": "lerna run test",
     "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
     "check-packages": "npm run clean && npm run compile && npm run test && npm run lint"
-    
   },
   "devDependencies": {
+    "@babel/register": "^7.13.16",
     "lerna": "^4.0.0",
     "webpack": "^5.35.1",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-serve": "^4.0.0"
   },
   "dependencies": {
     "react": "^16.3.2",

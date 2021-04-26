@@ -3,4 +3,5 @@
 // please read https://webpack.js.org/contribute/writing-a-plugin/
 // so you will more familiar with how these works
 
-export { default as UnusedFilesWebpackPlugin } from './UnusedFilesWebpackPlugin';
+// export { default as UnusedFilesWebpackPlugin } from './UnusedFilesWebpackPlugin';
+export { default as WriteFilePlugin } from './WriteFilePlugin';

@@ -6,13 +6,6 @@
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
   "license": "ISC",
   "main": "src/index.js",
-  "directories": {
-    "src": "src",
-    "test": "__tests__"
-  },
-  "files": [
-    "src"
-  ],
   "publishConfig": {
     "access": "public"
   },
@@ -23,6 +16,12 @@
   "dependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
+  },
+  "scripts": {
+    "dev:client": "webpack-serve --mode development --config ./avatar/client/webpack-serve.config.js"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.1.14"
   },
   "gitHead": "48730a637ab60b4cc2a13c67ad896c8cb6c7598c"
 }
