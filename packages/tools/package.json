@@ -11,6 +11,7 @@
   "bin": {
     "tools": "./tools.js"
   },
+  "type":"module",
   "files": [
     "tools.js",
     "babel.options.js",

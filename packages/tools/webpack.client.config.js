@@ -1,4 +1,20 @@
-require('@babel/register');
+
+// const appRootDir = require('app-root-dir');
+// const debug = require('debug');
+// const fs = require('fs-extra');
+// const path = require('path');
+// const cssnano = require('cssnano');
+// const AssetsPlugin = require('assets-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const MiniCssExtractPlugin = require('nini-css-extract-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
+// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
+// const safeParser = require('postcss-safe-parser');
+// const webpack = require('webpack');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+// const config = require('@aatif-packages/config');
 import appRootDir from 'app-root-dir';
 import debug from 'debug';
 import fs from 'fs-extra';

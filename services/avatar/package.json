@@ -16,6 +16,7 @@
   "dependencies": {
     "@aatif-packages/config": "^2.1.2",
     "@aatif-packages/tools": "^2.4.5",
+    "@babel/runtime": "^7.13.17",
     "app-root-dir": "^1.0.2",
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
