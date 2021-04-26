@@ -1,6 +1,6 @@
 {
   "name": "@aatif-packages/tools",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "config for webpack",
   "author": "aatifbandey <aatifbandey2009@gmail.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
@@ -11,7 +11,6 @@
   "bin": {
     "tools": "./tools.js"
   },
-
   "files": [
     "tools.js",
     "babel.options.js",
@@ -21,7 +20,7 @@
     "webpackPlugins.js"
   ],
   "dependencies": {
-    "@aatif-packages/config": "^2.1.1",
+    "@aatif-packages/config": "^2.1.2",
     "@babel/cli": "7.12.1",
     "@babel/core": "^7.13.16",
     "@babel/node": "7.12.1",
@@ -117,7 +116,6 @@
   "publishConfig": {
     "access": "public"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aatifbandey/mono-react.git"
