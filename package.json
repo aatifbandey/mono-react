@@ -24,6 +24,7 @@
     "check-packages": "npm run clean && npm run compile && npm run test && npm run lint"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.16",
     "@babel/register": "^7.13.16",
     "lerna": "^4.0.0",
     "webpack": "^5.35.1",
