@@ -1,5 +1,4 @@
-const webpackClientConfig = require('./webpack.client.config');
-
+import webpackClientConfig from "./webpack.client.config";
 // const webpackServerConfig = require('./webpack.server.config');
 
 

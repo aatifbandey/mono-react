@@ -1,9 +1,10 @@
-const git = require('git-rev-sync');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const postcssPresetEnv = require('postcss-preset-env');
+import git from 'git-rev-sync';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import postcssPresetEnv from 'postcss-preset-env';
+
+import { ifElse } from './lib/logic';
 
 
-const { ifElse } = require('./lib/logic');
 const timestamp = date.getTime();
 let gitRevRaw = `latest${timestamp}`;
 let gitRevision = JSON.stringify(gitRevRaw);

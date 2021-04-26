@@ -1,4 +1,4 @@
-const execIfFunc = require('./execIfFunc');
+import execIfFunc from "./execIfFunc";
 /**
  * This is a higher order function that accepts a boolean condition and will
  * return a function allowing you to provide if/else values that should be
