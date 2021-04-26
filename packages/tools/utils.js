@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
 
 
-const { ifElse } = require('./utils/logic');
+const { ifElse } = require('./lib/logic');
 const timestamp = date.getTime();
 let gitRevRaw = `latest${timestamp}`;
 let gitRevision = JSON.stringify(gitRevRaw);

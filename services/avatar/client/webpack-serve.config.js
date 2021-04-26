@@ -1,7 +1,7 @@
 require('@babel/register');
 const fs = require('fs');
 const config = require('@aatif-packages/config');
-
+console.log(config);
 
 global.__DEV__ = true;
 global.__TEST__ = false;
