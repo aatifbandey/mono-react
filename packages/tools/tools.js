@@ -49,11 +49,11 @@ yargs
     //   }
 
       require('./cli/build-package')({
-        dev: argv.dev,
-        types: argv.types,
-        typesTransformer: argv['types-transformer'],
+        // dev: argv.dev,
+        // types: argv.types,
+        // typesTransformer: argv['types-transformer'],
         copyFiles: argv['copy-files'],
-        withPostbuild: argv['with-postbuild'],
+        // withPostbuild: argv['with-postbuild'],
       });
     },
   )

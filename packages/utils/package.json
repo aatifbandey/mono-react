@@ -8,8 +8,7 @@
   "scripts": {
     "dev": "tools build-package --copy-files --dev --format=cjs",
     "build": "rm -rf dist && npm run build:js",
-    "build:js": "tools build-package --copy-files --types --format=cjs",
-    "postinstall": "test -n \"$NO_POST_INSTALL\" || npm run build"
+    "build:js": "tools build-package --copy-files --types --format=cjs"
   },
   "files": [
     "dist"
