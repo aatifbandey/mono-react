@@ -1,6 +1,6 @@
 {
   "name": "@mono-react/avatar",
-  "version": "2.6.6",
+  "version": "2.6.7",
   "description": "> TODO: description",
   "author": "aatifbandey <aatifbandey2009@gmail.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@aatif-packages/config": "^2.1.2",
-    "@aatif-packages/tools": "^2.4.6",
+    "@aatif-packages/tools": "^2.4.7",
     "@babel/runtime": "^7.13.17",
     "app-root-dir": "^1.0.2",
     "react": "^16.8.0",

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/aatifbandey/mono-react/compare/@aatif-packages/utils@1.1.6...@aatif-packages/utils@1.1.7) (2021-04-26)
+
+**Note:** Version bump only for package @aatif-packages/utils
+
+
+
+
+
 ## [1.1.6](https://github.com/aatifbandey/mono-react/compare/@aatif-packages/utils@1.1.5...@aatif-packages/utils@1.1.6) (2021-04-26)
 
 **Note:** Version bump only for package @aatif-packages/utils
