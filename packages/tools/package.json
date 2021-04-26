@@ -11,6 +11,7 @@
   "bin": {
     "tools": "./tools.js"
   },
+
   "files": [
     "tools.js",
     "babel.options.js",
@@ -116,6 +117,7 @@
   "publishConfig": {
     "access": "public"
   },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aatifbandey/mono-react.git"
