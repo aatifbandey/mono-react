@@ -1,15 +1,13 @@
 {
   "name": "@aatif-packages/config",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "> TODO: description",
   "author": "aatifbandey <aatifbandey2009@gmail.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
   "license": "ISC",
-  
   "files": [
     "index.js"
   ],
-  
   "publishConfig": {
     "access": "public"
   },

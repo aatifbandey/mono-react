@@ -1,6 +1,6 @@
 {
   "name": "@aatif-packages/utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "utilities",
   "author": "aatifbandey <aatifbandey2009@gmail.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
@@ -25,6 +25,6 @@
     "url": "https://github.com/aatifbandey/mono-react/issues"
   },
   "devDependencies": {
-    "@aatif-packages/tools": "^2.3.1"
+    "@aatif-packages/tools": "^2.3.2"
   }
 }
