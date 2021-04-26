@@ -1,0 +1,30 @@
+{
+  "name": "@aatif-packages/utils",
+  "version": "1.0.0",
+  "description": "utilities",
+  "author": "aatifbandey <aatifbandey2009@gmail.com>",
+  "homepage": "https://github.com/aatifbandey/mono-react#readme",
+  "license": "ISC",
+  "scripts": {
+    "dev": "tools build-package --copy-files --dev --format=cjs",
+    "build": "rm -rf dist && npm run build:js",
+    "build:js": "tools build-package --copy-files --types --format=cjs",
+    "postinstall": "test -n \"$NO_POST_INSTALL\" || npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aatifbandey/mono-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aatifbandey/mono-react/issues"
+  },
+  "devDependencies": {
+    "@aatif-packages/tools": "^2.3.1"
+  }
+}

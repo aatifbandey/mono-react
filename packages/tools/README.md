@@ -1,11 +1,11 @@
-# `@packages/config`
+# `@aatif-packages/tools`
 
 > TODO: description
 
 ## Usage
 
 ```
-const config = require('@packages/config');
+const tools = require('@aatif-packages/tools');
 
 // TODO: DEMONSTRATE API
 ```

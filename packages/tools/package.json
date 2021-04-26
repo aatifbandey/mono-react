@@ -8,7 +8,11 @@
   "engines": {
     "node": ">= 8"
   },
+  "bin": {
+    "tools": "./tools.js"
+  },
   "files": [
+    "tools.js",
     "babel.options.js",
     "index.js",
     "utils.js",
