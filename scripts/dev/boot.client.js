@@ -16,10 +16,9 @@ module.exports = (serviceName, DIR) => {
   // let routeGateway = path.resolve(appRootDir.get(), `./services/${serviceName}/client/routes/index`);
 
  
-  webpackConfig.resolve.alias = {
-    ...webpackConfig.resolve.alias,
-   // '@route-gateway': routeGateway,
-  };
+//   webpackConfig.resolve.alias = {
+//     ...webpackConfig.resolve.alias
+//   };
 
   const compiler = webpack(webpackConfig);
 
