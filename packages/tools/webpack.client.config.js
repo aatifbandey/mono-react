@@ -15,20 +15,21 @@
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 // const config = require('@aatif-packages/config');
-// import appRootDir from 'app-root-dir';
-// import debug from 'debug';
-// import fs from 'fs-extra';
-// import path from 'path';
-// import cssnano from 'cssnano';
-// import AssetsPlugin from 'assets-webpack-plugin';
-// import CopyWebpackPlugin from 'copy-webpack-plugin';
-// import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-// import TerserPlugin from 'terser-webpack-plugin';
-// import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-// import SimpleProgressWebpackPlugin from 'simple-progress-webpack-plugin';
-// import safeParser from 'postcss-safe-parser';
-// import webpack from 'webpack';
-// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
+import appRootDir from 'app-root-dir';
+import debug from 'debug';
+import fs from 'fs-extra';
+import path from 'path';
+import cssnano from 'cssnano';
+import AssetsPlugin from 'assets-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import SimpleProgressWebpackPlugin from 'simple-progress-webpack-plugin';
+import safeParser from 'postcss-safe-parser';
+import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 import config from '@aatif-packages/config';
 import { gitRevision, isDev, isProd, ifDev, ifProd, lessLoaders } from './utils';

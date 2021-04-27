@@ -19,6 +19,7 @@
     "webpack.client.config.js",
     "webpackPlugins.js"
   ],
+
   "dependencies": {
     "@aatif-packages/config": "^2.1.2",
     "@babel/cli": "7.12.1",

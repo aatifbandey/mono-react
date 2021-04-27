@@ -21,6 +21,7 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
   },
+
   "scripts": {
     "dev:client": "webpack-serve --mode development --config ./avatar/client/webpack-serve.config.js"
   },
