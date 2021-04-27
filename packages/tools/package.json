@@ -1,6 +1,6 @@
 {
   "name": "@aatif-packages/tools",
-  "version": "2.4.8",
+  "version": "2.4.9",
   "description": "config for webpack",
   "author": "aatifbandey <aatifbandey2009@gmail.com>",
   "homepage": "https://github.com/aatifbandey/mono-react#readme",
@@ -19,7 +19,6 @@
     "webpack.client.config.js",
     "webpackPlugins.js"
   ],
-
   "dependencies": {
     "@aatif-packages/config": "^2.1.2",
     "@babel/cli": "7.12.1",

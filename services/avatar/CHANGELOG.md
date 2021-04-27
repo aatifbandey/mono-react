@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.9](https://github.com/aatifbandey/mono-react/compare/@mono-react/avatar@2.6.8...@mono-react/avatar@2.6.9) (2021-04-27)
+
+**Note:** Version bump only for package @mono-react/avatar
+
+
+
+
+
 ## [2.6.8](https://github.com/aatifbandey/mono-react/compare/@mono-react/avatar@2.6.7...@mono-react/avatar@2.6.8) (2021-04-27)
 
 **Note:** Version bump only for package @mono-react/avatar
