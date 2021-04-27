@@ -19,7 +19,7 @@
   },
   "betterScripts": {
     "avatar:dev:client": {
-      "start": "nodemon --exec 'babel-node --ignore 'node_modules' --root-mode upward ./src/app.js'",
+      
       "command": "node --max-old-space-size=4096 ./scripts/dev/bootstrap.js",
       "env": {
         "DEBUG": "avatar*,build*",

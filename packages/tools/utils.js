@@ -1,18 +1,14 @@
-import git from 'git-rev-sync';
+
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import postcssPresetEnv from 'postcss-preset-env';
 
 import { ifElse } from './lib/logic';
-
+const date = new Date();
 
 const timestamp = date.getTime();
 let gitRevRaw = `latest${timestamp}`;
 let gitRevision = JSON.stringify(gitRevRaw);
 
-if (!BUILD_STATELESS) {
-  gitRevRaw = git.long();
-  gitRevision = JSON.stringify(gitRevRaw);
-}
 
 
 const isDev = process.env.NODE_ENV === 'development';

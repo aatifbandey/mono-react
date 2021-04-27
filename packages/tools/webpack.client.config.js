@@ -1,21 +1,4 @@
 
-// const appRootDir = require('app-root-dir');
-// const debug = require('debug');
-// const fs = require('fs-extra');
-// const path = require('path');
-// const cssnano = require('cssnano');
-// const AssetsPlugin = require('assets-webpack-plugin');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const MiniCssExtractPlugin = require('nini-css-extract-plugin');
-// const TerserPlugin = require('terser-webpack-plugin');
-// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-// const SimpleProgressWebpackPlugin = require('simple-progress-webpack-plugin');
-// const safeParser = require('postcss-safe-parser');
-// const webpack = require('webpack');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-
-// const config = require('@aatif-packages/config');
-
 import appRootDir from 'app-root-dir';
 import debug from 'debug';
 import fs from 'fs-extra';
@@ -51,15 +34,13 @@ const buildPath = `./services/${serviceName}/build/client`;
 const buildStaticPath = `./services/${serviceName}/build/static`;
 
 // Make sure build path is exist, if not create it
-// Disable clean build forlder for dionisos (microsites), repack existing and new files
-// This condition moved to dionisos webpack config
-if (serviceName !== 'dionisos') {
+
   log(`> Cleaning output folder ${buildPath} ...`);
   fs.emptyDirSync(path.resolve(appRootDir.get(), buildPath));
 
   log(`> Cleaning output folder ${buildStaticPath} ...`);
   fs.emptyDirSync(path.resolve(appRootDir.get(), buildStaticPath));
-}
+
 
 if (isDev) {
   log(`> Copying static file...`);
@@ -269,16 +250,16 @@ const webpackConfig = {
      * Used in all environtment
      * DefinePlugin, CommonsChunkPlugin, AssetsPlugin
      */
-    new webpack.DefinePlugin({
-      __DEV__: isDev,
-      __TEST__: false,
-      __PROD__: isProd,
-      __CLIENT__: true,
-      __SERVER__: false,
-      // __DEVTOOLS__: isVerbose, 
-      __GITREV__: gitRevision,
-      __PUBLIC_PATH__: JSON.stringify(publicPath),
-    }),
+    // new webpack.DefinePlugin({
+    //   __DEV__: isDev,
+    //   __TEST__: false,
+    //   __PROD__: isProd,
+    //   __CLIENT__: true,
+    //   __SERVER__: false,
+    //   // __DEVTOOLS__: isVerbose, 
+    //   __GITREV__: gitRevision,
+    //   __PUBLIC_PATH__: JSON.stringify(publicPath),
+    // }),
 
     /**
      * Webpack progress plugin to see build progress
@@ -326,14 +307,16 @@ const webpackConfig = {
     ),
    
   ].filter(Boolean),
-
-  node: {
-    dgram: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    child_process: 'empty',
-  },
+  resolve: {
+    fallback: {
+      
+      dgram: false,
+      fs: false,
+      net: false,
+      tls: false,
+      child_process: false
+    }
+  }
 };
 
 export { buildPath, defaultLoaders, fallbackLoader, serviceName };

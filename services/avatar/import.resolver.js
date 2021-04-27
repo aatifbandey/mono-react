@@ -10,10 +10,7 @@ module.exports = {
       ...rootResolver.relativeAliases('avatar'),
       '@': path.resolve(appRootDir.get(), './services/avatar/client/'),
       // '@route-gateway': path.resolve(appRootDir.get(), './services/poseidon/client/routes/index.js'),
-      $getUsedConstants: path.resolve(
-        appRootDir.get(),
-        './services/avatar/client/constants/getUsedConstants/client.js',
-      ),
+      
     },
   },
 };

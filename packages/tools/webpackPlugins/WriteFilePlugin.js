@@ -9,6 +9,7 @@ export default class WriteFilePlugin {
   }
 
   apply(compiler) {
+    
     compiler.hooks.done.tap('WriteFilePlugin', () => {
       if (this.dest && this.data) {
         console.log(`[WriteFilePlugin] Doing operation: "${this.operationName}"`);
