@@ -3,15 +3,11 @@ import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server'
 
-
-
-
 import App from '@routes/Home';
 import { getHeader, getFooter } from './html-template';
 
 const debug = require('debug')('avatar:render');
 
-// const statsFile = path.resolve(__dirname, '../client/loadable-stats.json');
 
 const renderer = async ctx => {
   debug(`server side render ${ctx.url}`);
