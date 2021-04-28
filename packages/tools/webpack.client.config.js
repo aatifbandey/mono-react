@@ -146,39 +146,14 @@ const webpackConfig = {
     globalObject: ifDev('this', 'window'), // on dev we set to 'this' to handle comlink-loader bug. Until we can move to worker-plugin
   },
 
-  /**
-   * Webpack 4 configuration
-   * Auto minified in production, auto common chunk
-   * the default is production
-   */
+ 
   optimization: {
     // extracts webpack's boilerplate to its own chunk, so all other chunks can be consistent between builds
     // allows better caching for the browsers
     runtimeChunk: {
       name: 'runtime',
     },
-    splitChunks: {
-      maxInitialRequests: 10,
-      cacheGroups: {
-        vendor: {
-          test: /node_modules/,
-          chunks: 'initial',
-          filename: ifDev('vendor.js', 'vendor.[contenthash].js'),
-        },
-        framework: {
-          test: /[\\/]node_modules.*(react|react-dom|react-router|emotion|react-emotion|@loadable)\//,
-          chunks: 'initial',
-          filename: ifDev('framework.js', 'framework.[contenthash].js'),
-          priority: 9,
-        },
-        packages: {
-          test: /packages/,
-          chunks: 'initial',
-          filename: ifDev('packages.js', 'packages.[contenthash].js'),
-          priority: 1,
-        },
-      },
-    },
+    
     minimizer: ifProd([
       new TerserPlugin({
         cache: true,

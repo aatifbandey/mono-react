@@ -1968,6 +1968,13 @@
   dependencies:
     "@babel/plugin-syntax-dynamic-import" "^7.7.4"
 
+"@loadable/webpack-plugin@^5.14.2":
+  version "5.14.2"
+  resolved "https://registry.yarnpkg.com/@loadable/webpack-plugin/-/webpack-plugin-5.14.2.tgz#8948f6955e410fdde04bda04b6e149af4a73d734"
+  integrity sha512-VcRCFs1EXZrEcLayU3BsXfwESBDEEpwmsq1d1yU0Y40ZLWRsuoxteXu8sbMpleYzESlsmoEbtTIDFnFy4RLTDw==
+  dependencies:
+    make-dir "^3.0.2"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

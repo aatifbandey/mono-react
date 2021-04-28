@@ -21,7 +21,7 @@ const apiProxiesHostname = config.get('CLIENT.API.PROXIES.HOSTNAME');
 
 const httpsKey = config.get('HTTPS_KEY_FILE');
 const httpsCert = config.get('HTTPS_CERT_FILE');
-console.log( webpackMobileConfig.output);
+
 // devServer list of available options: https://github.com/webpack/webpack-dev-server/blob/master/lib/options.json
 webpackMobileConfig.devServer = {
     headers: {

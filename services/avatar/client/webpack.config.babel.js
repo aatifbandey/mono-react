@@ -4,6 +4,7 @@ import appRootDir from 'app-root-dir';
 import config from '@aatif-packages/config';
 import { ifDev } from '../lib';
 
+// import LoadableWebpackPlugin from '@loadable/webpack-plugin';
 
 
 import webpackConfig, { defaultLoaders, fallbackLoader } from '@aatif-packages/tools/webpack.client.config';
@@ -49,7 +50,9 @@ webpackConfig.module.rules[0].oneOf = [
 
 webpackConfig.plugins = [
   ...webpackConfig.plugins,
-  
+  // new LoadableWebpackPlugin({
+  //   writeToDisk: true,
+  // }),
   new WriteFilePlugin({
     data: () => new Date().getTime(),
     dest: path.join(buildStaticPath, 'build.timestamp.json'),

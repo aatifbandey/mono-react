@@ -17,6 +17,7 @@
     "@aatif-packages/config": "^2.1.2",
     "@aatif-packages/tools": "^2.4.10",
     "@babel/runtime": "^7.13.17",
+    "@loadable/webpack-plugin": "^5.14.2",
     "app-root-dir": "^1.0.2",
     "emotion": "^11.0.0",
     "react": "^16.8.0",
