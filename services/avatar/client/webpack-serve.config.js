@@ -1,7 +1,7 @@
 require('@babel/register');
 const fs = require('fs');
 const config = require('@aatif-packages/config');
-console.log(config);
+
 
 global.__DEV__ = true;
 global.__TEST__ = false;
@@ -11,6 +11,7 @@ global.__CONSTANTS__ = config.getConstants();
 
 const { default: webpackMobileConfig } = require('./webpack.config.babel');
 
+const swMiddleware = require('../server/swMiddleware').default;
 
 const host = config.get('HOST');
 const port = config.get('CLIENT.PORT');
@@ -20,7 +21,7 @@ const apiProxiesHostname = config.get('CLIENT.API.PROXIES.HOSTNAME');
 
 const httpsKey = config.get('HTTPS_KEY_FILE');
 const httpsCert = config.get('HTTPS_CERT_FILE');
-
+console.log( webpackMobileConfig.output);
 // devServer list of available options: https://github.com/webpack/webpack-dev-server/blob/master/lib/options.json
 webpackMobileConfig.devServer = {
     headers: {
@@ -32,50 +33,53 @@ webpackMobileConfig.devServer = {
     historyApiFallback: {
       rewrites: [{ from: /\/*.pl$/, to: '/index.html' }],
     },
-    // before: app => {
-    //   app.use(async (req, res, next) => {
-    //     const testJS = /.*.js$/;
+   
+    
+    before: app => {
+      app.use(async (req, res, next) => {
+        const testJS = /.*.js$/;
   
-    //     if (testJS.test(req.path)) {
-    //       res.removeHeader('Content-Type');
-    //       res.setHeader('Content-Type', 'application/javascript');
+        if (testJS.test(req.path)) {
+          res.removeHeader('Content-Type');
+          res.setHeader('Content-Type', 'application/javascript');
   
-    //       const originalSetHeader = res.setHeader.bind(res);
-    //       res.setHeader = (key, value) => {
-    //         if (key === 'Content-Type') {
-    //           // prevent content-type to be set again
-    //           // this is a hack to bypass webpack-dev-middleware
-    //           // https://github.com/jhnns/webpack-dev-middleware/blob/a51750f63dc6fd8d20986ec457823557717e2f92/middleware.js#L131
-    //           return;
-    //         }
+          const originalSetHeader = res.setHeader.bind(res);
+          res.setHeader = (key, value) => {
+            if (key === 'Content-Type') {
+              // prevent content-type to be set again
+              // this is a hack to bypass webpack-dev-middleware
+              // https://github.com/jhnns/webpack-dev-middleware/blob/a51750f63dc6fd8d20986ec457823557717e2f92/middleware.js#L131
+              return;
+            }
   
-    //         originalSetHeader(key, value);
-    //       };
-    //     }
+            originalSetHeader(key, value);
+          };
+        }
   
-    //     await next();
-    //   });
-    // },
-    // after: app => {
-    //   app.use(async (req, res, next) => {
-    //     if (req.path === '/manifest.json') {
-    //       res.status('200');
-    //       res.send(manifestJson);
+        await next();
+      });
+    },
+    after: app => {
+      app.use(async (req, res, next) => {
+        if (req.path === '/manifest.json') {
+          res.status('200');
+          res.send(manifestJson);
   
-    //       return;
-    //     }
+          return;
+        }
   
-    //     await next();
-    //   });
+        await next();
+      });
   
-    //   app.use(swMiddleware());
-    // },
+      app.use(swMiddleware());
+    },
     host,
     hot: true,
     ...(httpsKey && httpsCert ? { https: { key: fs.readFileSync(httpsKey), cert: fs.readFileSync(httpsCert) } } : {}),
     logLevel: 'error', // this log is displayed in console output
     clientLogLevel: 'error', // this log is displayed in browser
     port,
+    
     publicPath: webpackMobileConfig.output.publicPath,
     overlay: {
       warnings: false,

@@ -36,6 +36,7 @@ module.exports = (serviceName, DIR) => {
   // });
 
   const server = new WDS(compiler, devServer)
-  console.log(compiler);
+  
   server.listen(port, host);
+  console.log(`[${serviceName}:dev:client] - ${DIR} is ready and running on http://${host}:${port}`);
 };

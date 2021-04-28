@@ -4,7 +4,7 @@ const dotenv = require('dotenv-safe');
 const fromPairs = require('lodash/fromPairs');
 
 const { DIR = '', NODE_ENV } = process.env;
-console.log(DIR)
+
 const [serviceName] = DIR.split('/');
 const baseEnvPath = appRootDir.get().endsWith(serviceName) ? '' : `services/${serviceName}`;
 
