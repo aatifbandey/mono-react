@@ -20,7 +20,7 @@
   "betterScripts": {
     "avatar:dev:client": {
       
-      "command": "node --max-old-space-size=4096 ./scripts/dev/bootstrap.js --hot --inline",
+      "command": "node --max-old-space-size=4096 ./scripts/dev/bootstrap.js",
       "env": {
         "DEBUG": "avatar*,build*",
         "DIR": "avatar/client",

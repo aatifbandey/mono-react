@@ -1,11 +1,11 @@
 import  createScriptTag  from '../../lib/html/createScriptTag';
 import getClientAssets from '../../lib/file/getClientAssets';
 
-const mainBundles =  ['runtime', 'framework~main', 'vendor~main'];
 let assets=''
 export const getHeader = ({
 
 } = {}) => {
+   
     assets = getClientAssets('avatar');
     
     let scripts='';
@@ -13,6 +13,7 @@ export const getHeader = ({
     scripts = `${createScriptTag({ src: assets['vendor~main']?.js })}${createScriptTag({
         src: assets.main?.js,
     })}${createScriptTag({ src: assets.runtime?.js })}`;
+  
   return `<!DOCTYPE html><html lang="id" ><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=no, width=device-width">
@@ -31,10 +32,10 @@ export const getHeader = ({
 export const getFooter = ({
  
 } = {}) => {
-    assets = getClientAssets('avatar');
+    
     return `
     </div>
     </body>
-    ${mainBundles.map(b => createScriptTag({ src: assets[b]?.js })).join('')}
+    
     </html>`;
 };

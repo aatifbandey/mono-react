@@ -61,12 +61,12 @@ webpackMobileConfig.devServer = {
     },
     after: app => {
       app.use(async (req, res, next) => {
-        if (req.path === '/manifest.json') {
-          res.status('200');
-          res.send(manifestJson);
+        // if (req.path === '/manifest.json') {
+        //   res.status('200');
+        //   res.send(manifestJson);
   
-          return;
-        }
+        //   return;
+        // }
   
         await next();
       });
@@ -74,7 +74,7 @@ webpackMobileConfig.devServer = {
       app.use(swMiddleware());
     },
     host,
-    hot: true,
+    hot: false, // we have turned off hot reloading for now
     ...(httpsKey && httpsCert ? { https: { key: fs.readFileSync(httpsKey), cert: fs.readFileSync(httpsCert) } } : {}),
     logLevel: 'error', // this log is displayed in console output
     clientLogLevel: 'error', // this log is displayed in browser

@@ -251,7 +251,7 @@ const webpackConfig = {
 
     /**
      * Copy static assets
-     * These copied folders will be deployed to S3 (Tokopedia CDN)
+     * These copied folders can be deployed to S3 (CDN)
      */
     new CopyWebpackPlugin([
       {
