@@ -68,14 +68,16 @@ const defaultLoaders = [
   },
   {
     test: /\.(eot|ttf|woff|woff2)$/,
-    use: [
-      {
-        loader: 'url-loader',
-        options: {
-          limit: 1024,
-        },
-      },
-    ],
+    type: 'asset/inline',
+    // Below config is for webpack 4
+    // use: [
+    //   {
+    //     loader: 'url-loader',
+    //     options: {
+    //       limit: 1024,
+    //     },
+    //   },
+    // ],
   },
   
 ];

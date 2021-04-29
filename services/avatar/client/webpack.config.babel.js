@@ -25,23 +25,26 @@ webpackConfig.module.rules[0].oneOf = [
   ...defaultLoaders,
   {
     test: /\.(png|jpe?g|gif|svg)$/,
-    use: [
-      {
-        loader: require('@aatif-packages/tools/loaders')['file-loader'],
-        options: {
-          limit: 1024,
-          name(file) {
-            if (file.indexOf('offline-image') > -1) {
-              // keep the name of this image, so we can precache them using workbox
-              return ifDev('[name].[ext]', '[name].[hash:8].[ext]');
-            }
+    type: 'asset/resource',
+    
+    // Below config is for webpack 4
+    // use: [
+    //   {
+    //     loader: require('@aatif-packages/tools/loaders')['file-loader'],
+    //     options: {
+    //       limit: 1024,
+    //       name(file) {
+    //         if (file.indexOf('offline-image') > -1) {
+    //           // keep the name of this image, so we can precache them using workbox
+    //           return ifDev('[name].[ext]', '[name].[hash:8].[ext]');
+    //         }
 
-            return ifDev('[name].[ext]', '[hash:8].[ext]');
-          },
-          publicPath,
-        },
-      },
-    ],
+    //         return ifDev('[name].[ext]', '[hash:8].[ext]');
+    //       },
+    //       publicPath,
+    //     },
+    //   },
+    // ],
   },
   fallbackLoader,
 ];

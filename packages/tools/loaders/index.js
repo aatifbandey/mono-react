@@ -4,7 +4,6 @@ module.exports = {
     'babel-loader': require.resolve('babel-loader'),
     'file-loader': require.resolve('file-loader'),
     'source-map-loader': require.resolve('source-map-loader'),
-   
     'url-loader': require.resolve('url-loader'),
     'style-loader': require.resolve('style-loader'),
     'css-loader': require.resolve('css-loader'),

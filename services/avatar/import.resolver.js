@@ -8,6 +8,7 @@ module.exports = {
     alias: {
       ...rootResolver.resolve.alias,
       ...rootResolver.relativeAliases('avatar'),
+      '@routes': path.resolve(appRootDir.get(), './services/avatar/client/routes/'),
       '@': path.resolve(appRootDir.get(), './services/avatar/client/'),
       // '@route-gateway': path.resolve(appRootDir.get(), './services/poseidon/client/routes/index.js'),
       

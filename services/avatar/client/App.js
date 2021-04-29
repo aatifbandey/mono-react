@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import { hot } from 'react-hot-loader/root';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import Routes from './routes';
@@ -18,4 +18,4 @@ function App({ history }) {
   );
 }
 
-export default App;
+export default hot(App);

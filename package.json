@@ -15,16 +15,25 @@
     ]
   },
   "scripts": {
-    "avatar:dev:client": "bnr avatar:dev:client"
+    "avatar:dev:client": "bnr avatar:dev:client",
+    "avatar:dev:server": "bnr avatar:dev:server"
   },
   "betterScripts": {
     "avatar:dev:client": {
-      
       "command": "node --max-old-space-size=4096 ./scripts/dev/bootstrap.js",
       "env": {
         "DEBUG": "avatar*,build*",
         "DIR": "avatar/client",
         "NODE_ENV": "development"
+      }
+    },
+    "avatar:dev:server": {
+      "command": "node --max-old-space-size=4096 ./scripts/dev/bootstrap.js",
+      "env": {
+        "DEBUG": "avatar*,build*,middleware:*,redis*",
+        "DIR": "avatar/server",
+        "NODE_ENV": "development",
+        "NODE_PATH": "./"
       }
     }
   },

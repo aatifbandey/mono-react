@@ -27,7 +27,7 @@ const renderer = async ctx => {
   const routerContext = { status: 200, matchedModule: ''};
   try {
     
-
+    console.log("Hellow")
     ctx.routerContext = routerContext;
 
     const body = await renderToString(<StaticRouter location={ctx.url} context={routerContext}>
