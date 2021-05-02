@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.12](https://github.com/aatifbandey/mono-react/compare/@aatif-packages/tools@2.4.11...@aatif-packages/tools@2.4.12) (2021-05-02)
+
+**Note:** Version bump only for package @aatif-packages/tools
+
+
+
+
+
 ## [2.4.11](https://github.com/aatifbandey/mono-react/compare/@aatif-packages/tools@2.4.10...@aatif-packages/tools@2.4.11) (2021-04-28)
 
 **Note:** Version bump only for package @aatif-packages/tools
