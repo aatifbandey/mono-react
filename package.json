@@ -47,7 +47,6 @@
       }
     }
   },
-  
   "extends": "./babel.config.js",
   "devDependencies": {
     "@babel/core": "^7.13.16",
@@ -72,6 +71,7 @@
   },
   "dependencies": {
     "@aatif-packages/config": "*",
+    "@loadable/component": "^5.14.1",
     "app-root-dir": "^1.0.2",
     "dotenv-safe": "^8.2.0",
     "esm": "^3.2.25",
