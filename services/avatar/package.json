@@ -18,7 +18,8 @@
     "@aatif-packages/config": "^2.1.3",
     "@aatif-packages/tools": "^2.4.12",
     "@babel/runtime": "^7.13.17",
-    "@loadable/webpack-plugin": "^5.14.2",
+    "@loadable/babel-plugin": "^5.13.2",
+    "@loadable/server": "^5.14.2",
     "app-root-dir": "^1.0.2",
     "emotion": "^11.0.0",
     "koa": "^2.13.1",
@@ -31,6 +32,7 @@
     "dev:client": "webpack-serve --mode development --config ./avatar/client/webpack-serve.config.js"
   },
   "devDependencies": {
+    "@loadable/webpack-plugin": "^5.14.2",
     "webpack-dev-server": "^3.1.14"
   },
   "gitHead": "48730a637ab60b4cc2a13c67ad896c8cb6c7598c"

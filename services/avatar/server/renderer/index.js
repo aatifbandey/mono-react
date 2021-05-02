@@ -5,9 +5,12 @@ import { renderToString } from 'react-dom/server'
 
 import App from '../../client/routes';
 import { getHeader, getFooter } from './html-template';
+import { ChunkExtractor } from '@loadable/server';
+import path from 'path';
 
 const debug = require('debug')('avatar:render');
 
+const statsFile = path.resolve(__dirname, '../../build/client/loadable-stats.json');
 
 const renderer = async ctx => {
   debug(`server side render ${ctx.url}`);
@@ -26,23 +29,32 @@ const renderer = async ctx => {
   let completeHtmlDoc = '';
   const routerContext = { status: 200, matchedModule: ''};
   try {
-    
   
-    ctx.routerContext = routerContext;
-
-    const body = await renderToString(<StaticRouter location={ctx.url} context={routerContext}>
-        <App />
-    </StaticRouter>);
+    const chunkExtractor = new ChunkExtractor({ statsFile });
    
+    const app = chunkExtractor.collectChunks(
+    
+      <StaticRouter location={ctx.url} context={routerContext}>
+        <App />
+      </StaticRouter>
+    );
+   
+    ctx.routerContext = routerContext;
+    const body = await renderToString(app);
 
+    // const body = await renderToString(<StaticRouter location={ctx.url} context={routerContext}>
+    //     <App />
+    // </StaticRouter>);
     
     let htmlStates = {
       ...htmlStates,
+      chunkExtractor
     };
     completeHtmlDoc += getHeader(htmlStates);
 
 
     if (routerContext.url) {
+      
       ctx.status = routerContext?.location?.state?.status || 302;
       ctx.set('Location', routerContext.url);
       ctx.redirect(routerContext.url);
@@ -58,7 +70,7 @@ const renderer = async ctx => {
     //   // bundles: getBundles(stats, modules),
     // };
     // #checkpoint: 'HTML_STATE_EXTRACTED',
-    
+   
     completeHtmlDoc += getFooter(htmlStates);
     
     ctx.body = completeHtmlDoc;
@@ -66,7 +78,7 @@ const renderer = async ctx => {
     return;
   } catch (e) {
  
-    console.log("Testing");
+    console.log("Testing", e);
     hydrateOnClient();
   }
 };

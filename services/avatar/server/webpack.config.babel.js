@@ -25,7 +25,8 @@ webpackConfig.module.rules[0].oneOf = [
       ],
       plugins: [
         ...babelNodeEnvironment.plugins,
-        // require('@aatif-packages/tools/babelPlugins')['@loadable/babel-plugin'],
+        
+        // require('@aatif-packages/tools/babelPlugins')['@loadable/babel-plugin'], // we have defined on root level of babel
         [
           require('@aatif-packages/tools/babelPlugins')['babel-plugin-emotion'],
           { autoLabel: isDev, hoist: isProd, sourceMap: isDev },

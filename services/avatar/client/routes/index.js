@@ -4,7 +4,7 @@ import loadable from '@loadable/component'
 
 
 const Home = loadable(
-  () => import(/* webpackChunkName: "home" */ '@routes/Home/'),
+  () => import(/* webpackChunkName: "home" */ './Home/'),
   {
     fallback: '<div> Loading chunk ....</div>',
     ssr: true,
@@ -12,7 +12,7 @@ const Home = loadable(
 );
 
 const About = loadable(
-  () => import(/* webpackChunkName: "about" */ '@routes/About/'),
+  () => import(/* webpackChunkName: "about" */ './About/'),
   {
     fallback: '<div> Loading chunk ....</div>',
     ssr: true,
@@ -28,12 +28,10 @@ const Routes = () => {
     return (
       <>
         <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/about-us" exact>
-            <About />
-          </Route>
+        <Route path="/" exact component={props => <Home {...props} />} />
+        <Route path="/about-us" exact component={props => <About {...props} />} />
+
+         
         </Switch>
       </>
     );

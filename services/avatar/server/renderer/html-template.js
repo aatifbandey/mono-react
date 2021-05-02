@@ -30,12 +30,14 @@ export const getHeader = ({
 };
 
 export const getFooter = ({
- 
+  chunkExtractor
 } = {}) => {
-    
+ 
     return `
     </div>
+
     </body>
+   ${chunkExtractor?.getScriptTags({ crossorigin: 'anonymous' })?.replace(/\<script async/g, '<script defer')}
     
     </html>`;
 };
