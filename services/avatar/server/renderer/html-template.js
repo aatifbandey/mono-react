@@ -21,9 +21,8 @@ export const getHeader = ({
   return `<!DOCTYPE html><html lang="id" ><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=5, user-scalable=no, width=device-width">
-   
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Tokopedia">
+    <meta name="apple-mobile-web-app-title" content="Aatif Bandey">
     <meta name="theme-color" content="#42b549">
     </head>
       ${scripts}
