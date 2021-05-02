@@ -6,11 +6,8 @@ import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import SimpleProgressWebpackPlugin from 'simple-progress-webpack-plugin';
-// import nodeExternals from 'webpack-node-externals';
 import config from '@aatif-packages/config';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 
-// import { UnusedFilesWebpackPlugin } from './webpackPlugins';
 
 import { resolve as importResolver } from './import.resolver';
 import { isDev, isProd, ifDev, ifProd } from './utils';
