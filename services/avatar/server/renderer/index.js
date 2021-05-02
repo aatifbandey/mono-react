@@ -3,7 +3,7 @@ import React from 'react';
 import { StaticRouter } from 'react-router-dom';
 import { renderToString } from 'react-dom/server'
 
-import App from '@routes/Home';
+import App from '../../client/routes';
 import { getHeader, getFooter } from './html-template';
 
 const debug = require('debug')('avatar:render');
@@ -27,7 +27,7 @@ const renderer = async ctx => {
   const routerContext = { status: 200, matchedModule: ''};
   try {
     
-    console.log("Hellow")
+  
     ctx.routerContext = routerContext;
 
     const body = await renderToString(<StaticRouter location={ctx.url} context={routerContext}>
@@ -49,7 +49,7 @@ const renderer = async ctx => {
 
       return;
     }
-
+    completeHtmlDoc += body;
     // Otherwise everything is all good and we send a 200 OK status.
 
     // htmlStates = {
@@ -58,15 +58,15 @@ const renderer = async ctx => {
     //   // bundles: getBundles(stats, modules),
     // };
     // #checkpoint: 'HTML_STATE_EXTRACTED',
-
+    
     completeHtmlDoc += getFooter(htmlStates);
-
+    
     ctx.body = completeHtmlDoc;
-
+    
     return;
   } catch (e) {
  
-
+    console.log("Testing");
     hydrateOnClient();
   }
 };

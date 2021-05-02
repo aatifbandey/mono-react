@@ -6,6 +6,7 @@ import webpackConfig, { defaultLoaders } from '@aatif-packages/tools/webpack.ser
 
 import { resolve as importResolver } from '../import.resolver';
 
+
 webpackConfig.resolve.alias = {
   ...importResolver.alias,
   // $getUsedConstants: path.resolve(appRootDir.get(), './services/avatar/client/constants/getUsedConstants/server.js'),

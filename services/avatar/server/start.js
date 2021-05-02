@@ -1,15 +1,15 @@
-import config from '@aatif-packages/config';
+const config = require('@aatif-packages/config');
 
 import app from './index';
 
 const debug = require('debug')('poseidon');
-console.log("Test === ",app);
+
 let currentApp = app.callback();
-const httpsKey = config.get('HTTPS_KEY_FILE');
-const httpsCert = config.get('HTTPS_CERT_FILE');
+// const httpsKey = config.get('HTTPS_KEY_FILE');
+// const httpsCert = config.get('HTTPS_CERT_FILE');
 
-const useHttps = Boolean(httpsKey && httpsCert);
-
+//  const useHttps = Boolean(httpsKey && httpsCert);
+const useHttps = false;
 let server;
 
 if (useHttps) {
@@ -19,15 +19,21 @@ if (useHttps) {
   server = https.createServer({ key: fs.readFileSync(httpsKey), cert: fs.readFileSync(httpsCert) }, currentApp);
 } else {
   const http = require('http');
-
-  server = http.createServer(currentApp);
+	console.log(currentApp);
+	server = http.createServer(currentApp)
+	// server = http.createServer(function (req, res) {
+	// 	res.writeHead(200, {'Content-Type': 'text/plain'});
+	// 	res.write('Hello World!');
+	// 	res.end();
+	// })
+	
 }
 
-// const HOST = config.get('HOST');
-// const PORT = config.get('PORT');
+const HOST = config.get('HOST');
+const PORT = config.get('PORT');
 
-server.listen(3000, err => {
-   
+server.listen(PORT, err => {
+    console.log("Port number", 3000)
   if (err) {
     debug(err);
   } else {

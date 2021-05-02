@@ -16,7 +16,8 @@
   },
   "scripts": {
     "avatar:dev:client": "bnr avatar:dev:client",
-    "avatar:dev:server": "bnr avatar:dev:server"
+    "avatar:dev:server": "bnr avatar:dev:server",
+    "avatar:start:server": "bnr avatar:start:server"
   },
   "betterScripts": {
     "avatar:dev:client": {
@@ -28,7 +29,16 @@
       }
     },
     "avatar:dev:server": {
-      "command": "node --max-old-space-size=4096 ./scripts/dev/bootstrap.js",
+      "command": "node --max-old-space-size=4096 ./scripts/dev/bootstrap.js & babel-node -r esm ./services/avatar/server/start.js",
+      "env": {
+        "DEBUG": "avatar*,build*,middleware:*,redis*",
+        "DIR": "avatar/server",
+        "NODE_ENV": "development",
+        "NODE_PATH": "./"
+      }
+    },
+    "avatar:start:server": {
+      "command": "babel-node -r esm ./services/avatar/server/start.js",
       "env": {
         "DEBUG": "avatar*,build*,middleware:*,redis*",
         "DIR": "avatar/server",
@@ -37,11 +47,7 @@
       }
     }
   },
-  "babel": {
-    "plugins": [
-      "@babel/plugin-proposal-class-properties"
-    ]
-  },
+  
   "extends": "./babel.config.js",
   "devDependencies": {
     "@babel/core": "^7.13.16",
@@ -68,6 +74,8 @@
     "@aatif-packages/config": "*",
     "app-root-dir": "^1.0.2",
     "dotenv-safe": "^8.2.0",
+    "esm": "^3.2.25",
+    "http-server": "^0.12.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2"
   }

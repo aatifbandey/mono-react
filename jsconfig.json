@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "baseUrl": ".",
+      "module": "commonjs",
+      "checkJs": true,
+      "experimentalDecorators": true,
+      "target": "es2018",
+      "jsx": "react"
+    },
+    "exclude": ["bin", "build*", "config", "coverage", "docs", "envConfig", "files", "node_modules"]
+  }

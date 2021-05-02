@@ -4,10 +4,11 @@ import fs from 'fs-extra';
 import path from 'path';
 import webpack from 'webpack';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-// import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
+import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 import SimpleProgressWebpackPlugin from 'simple-progress-webpack-plugin';
 // import nodeExternals from 'webpack-node-externals';
 import config from '@aatif-packages/config';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 // import { UnusedFilesWebpackPlugin } from './webpackPlugins';
 
@@ -55,20 +56,20 @@ const fallbackLoader = {
   ],
 };
 
-// const developmentPlugins = () => {
-//   if (isDev) {
-//     // need to lazy load this plugin
-//     const StartServerPlugin = require('start-server-webpack-plugin');
+const developmentPlugins = () => {
+  if (isDev) {
+    // need to lazy load this plugin
+    // const StartServerPlugin = require('start-server-webpack-plugin'); // doesnt work with webpack 5
 
-//     return [
-//       new StartServerPlugin('index.js'),
-//       new webpack.HotModuleReplacementPlugin(),
-//       new FriendlyErrorsWebpackPlugin(),
-//     ];
-//   }
+    return [
+    	// new StartServerPlugin('index.js'),
+      new webpack.HotModuleReplacementPlugin(),
+      new FriendlyErrorsWebpackPlugin(),
+    ];
+  }
 
-//   return [];
-// };
+  return [];
+};
 
 const webpackConfig = {
   /**
@@ -140,7 +141,7 @@ const webpackConfig = {
     extensions: ['.js', '.jsx', '.json'],
     modules: ['node_modules'],
     alias: importResolver.alias,
-    symlinks: true, // this is the default value. Previously we are setting it to false, no idea why
+    // symlinks: true, 
     cacheWithContext: false,
   },
 
@@ -192,7 +193,7 @@ const webpackConfig = {
      * Development webpack plugin ... to start webpack SSR server 
      * Won't be enabled in production
      */
-    // ...developmentPlugins(),
+    ...developmentPlugins(),
 
     /**
      * Define environment variable from process.env
@@ -211,7 +212,7 @@ const webpackConfig = {
     //   __PROD__: isProd,
     //   __CLIENT__: false,
     //   __SERVER__: true,
-    //   __GITREV__: gitRevision,
+      
     //   __PUBLIC_PATH__: JSON.stringify(publicPath),
     // }),
 
@@ -228,7 +229,7 @@ const webpackConfig = {
       raw: true,
       entryOnly: false,
     }),
-
+		
     new CopyWebpackPlugin([
       {
         from: path.resolve(appRootDir.get(), 'services', serviceName, '.env.example'),

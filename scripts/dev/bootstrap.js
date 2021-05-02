@@ -14,7 +14,7 @@ const __init__ = () => {
   const bootstrap = require(`./boot.${type}`);
 
   debug(`Preparing ${serviceName} for development...`);
-
+ 
   bootstrap(DIR);
 };
 
