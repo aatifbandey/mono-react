@@ -234,7 +234,7 @@ const webpackConfig = {
     //   __CLIENT__: true,
     //   __SERVER__: false,
     //   // __DEVTOOLS__: isVerbose, 
-    //   __GITREV__: gitRevision,
+    //   // __GITREV__: gitRevision,
     //   __PUBLIC_PATH__: JSON.stringify(publicPath),
     // }),
 

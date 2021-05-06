@@ -2,21 +2,22 @@ import  createScriptTag  from '../../lib/html/createScriptTag';
 import getClientAssets from '../../lib/file/getClientAssets';
 
 let assets='';
-const ifProd = process.env.NODE_ENV === 'development' ? false:true;
-export const getHeader = ({
+const ifProd = process.env.NODE_ENV === 'production' ? true:false;
+const mainBundles= ['runtime', 'framework~main', 'vendor~main', 'main'];
 
+export const getHeader = ({
+  ssr=false
 } = {}) => {
     
     assets = getClientAssets('avatar');
     
     let scripts='';
    
-  if(!ifProd) {
+  if(!ifProd && !ssr) {
       
     
-    scripts = `${createScriptTag({ src: assets['vendor~main']?.js, dev:true })}${createScriptTag({
-        src: assets.main?.js,
-        dev:true})}${createScriptTag({ src: assets.runtime?.js, dev:true})}`;
+    scripts = `${createScriptTag({ src: assets['vendor~main']?.js })}${createScriptTag({
+        src: assets.main?.js})}${createScriptTag({ src: assets.runtime?.js})}`;
   }
   return `<!DOCTYPE html><html lang="id" ><head>
     <meta charset="UTF-8">
@@ -30,14 +31,16 @@ export const getHeader = ({
 };
 
 export const getFooter = ({
-  chunkExtractor
+  chunkExtractor,
+  ssr
 } = {}) => {
- 
+  console.log(mainBundles);
     return `
     </div>
 
     </body>
-   ${chunkExtractor?.getScriptTags({ crossorigin: 'anonymous' })?.replace(/\<script async/g, '<script defer')}
+   ${chunkExtractor?.getScriptTags({ crossorigin: 'anonymous' })?.replace(/\<script async/g, '<script defer')  ||
+   mainBundles.map(b => createScriptTag({ src: assets[b]?.js, dev:ssr?true:false })).join('')}
     
     </html>`;
 };

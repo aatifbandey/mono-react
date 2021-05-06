@@ -23,10 +23,14 @@
     "app-root-dir": "^1.0.2",
     "emotion": "^11.0.0",
     "koa": "^2.13.1",
+    "lodash": "^4.17.21",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-hot-loader": "^4.13.0",
-    "react-router-dom": "^5.2.0"
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-router-redux": "^4.0.8",
+    "redux-saga": "^1.1.3"
   },
   "scripts": {
     "dev:client": "webpack-serve --mode development --config ./avatar/client/webpack-serve.config.js"

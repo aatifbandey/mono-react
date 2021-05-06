@@ -7,7 +7,8 @@ import App from '../../client/routes';
 import { getHeader, getFooter } from './html-template';
 import { ChunkExtractor } from '@loadable/server';
 import path from 'path';
-
+import { Provider  } from "react-redux";
+import { configureStore  } from '../../store';
 const debug = require('debug')('avatar:render');
 
 const statsFile = path.resolve(__dirname, '../../build/client/loadable-stats.json');
@@ -29,14 +30,17 @@ const renderer = async ctx => {
   let completeHtmlDoc = '';
   const routerContext = { status: 200, matchedModule: ''};
   try {
-  
-    const chunkExtractor = new ChunkExtractor({ statsFile });
-   
-    const app = chunkExtractor.collectChunks(
     
-      <StaticRouter location={ctx.url} context={routerContext}>
-        <App />
-      </StaticRouter>
+    const chunkExtractor = new ChunkExtractor({ statsFile });
+    
+    
+    const { store } = configureStore({});
+    const app = chunkExtractor.collectChunks(
+      <Provider store={store}>
+        <StaticRouter location={ctx.url} context={routerContext}>
+          <App />
+        </StaticRouter>
+      </Provider>
     );
    
     ctx.routerContext = routerContext;
@@ -48,7 +52,8 @@ const renderer = async ctx => {
     
     let htmlStates = {
       ...htmlStates,
-      chunkExtractor
+      chunkExtractor,
+      ssr: true
     };
     completeHtmlDoc += getHeader(htmlStates);
 

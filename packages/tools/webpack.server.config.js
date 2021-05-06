@@ -128,6 +128,7 @@ const webpackConfig = {
    */
   output: {
     path: path.resolve(appRootDir.get(), buildPath),
+    
     filename: '[name].js',
     chunkFilename: ifDev('chunk.[name].js', 'chunk.[name].[chunkhash:8].js'),
     publicPath,
