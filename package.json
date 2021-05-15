@@ -18,6 +18,7 @@
     "avatar:dev:client": "bnr avatar:dev:client",
     "avatar:dev:server": "bnr avatar:dev:server",
     "avatar:start:server": "bnr avatar:start:server"
+    
   },
   "betterScripts": {
     "avatar:dev:client": {
